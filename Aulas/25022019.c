@@ -17,7 +17,7 @@ int main() {
 	int dia = 31;
 	float media = 9.5;
 		
-	printf("sexo = %c \nDia = %d\nMedia = %.1f", sexo,dia,media);
+	printf("sexo = %c \nDia = %d\nMedia = %.1f", sexo, dia, media);
 	
 	printf("\n\n");
 	f_desenharBoneco();
