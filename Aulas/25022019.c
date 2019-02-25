@@ -2,28 +2,33 @@
 #include <stdlib.h>
 
 void f_desenharBoneco() {
-	printf("\t\t\t 0 \n\t\t\t/|\\ \n\t\t\t/ \\ \n");
+	printf("\n\n\t\t\t 0 \n\t\t\t/|\\ \n\t\t\t/ \\ \n\n\n------------------------------------------------\n");
 }
 
 void f_mostrarMenu() {
-	printf("\tInforme a operacao desejada\n1-Soma\n2-Substracao\n3-Multiplicacao\n4-Divisao\n5-Sair");
+	printf("\tInforme a operacao desejada\n1-Soma\n2-Substracao\n3-Multiplicacao\n4-Divisao\n5-Sair\n\n------------------------------------------------\n");
+}
+void f_aulaPrintfScanF() {
+	char sexo = 'M';
+	int dia = 0;
+	float media = 0.0;
+	
+	printf("Digite o sexo: ");
+	scanf("%c", &sexo);
+	printf("\nDigite o dia: ");
+	scanf("%d", &dia);
+	printf("\nDigite a media: ");
+	scanf("%f", &media);
+
+	system("cls || clear");
+	
+	printf("\n\n------------------------------------------------\n\t\tValores informados\nSexo = %c\nDia = %d\nMedia = %.1f\n\n------------------------------------------------\n", sexo, dia, media);
 }
 
-
-
-int main() {
-	
-	char sexo = 'F';
-	int dia = 31;
-	float media = 9.5;
-		
-	printf("sexo = %c \nDia = %d\nMedia = %.1f", sexo, dia, media);
-	
-	printf("\n\n");
+int main() {	
+	f_aulaPrintfScanF();
 	f_desenharBoneco();
-	printf("\n\n------------------------------------------------\n");
 	f_mostrarMenu();
-	printf("\n\n------------------------------------------------\n");
 	system("pause");
 	return 0;
 }
