@@ -31,8 +31,20 @@ void menu() {
 		case 8:
 			listQuestao8();
 		break;
+		case 9:
+			listQuestao9();
+		break;
+		case 10:
+			listQuestao10();
+		break;
 		case 11:
 			listQuestao11();
+		break;
+		case 12:
+			listQuestao12();
+		break;
+		case 13:
+			listQuestao13();
 		break;
 	}
 }
@@ -124,6 +136,34 @@ void listQuestao8() {
 	menu();
 }
 
+void listQuestao9() {
+	float angulo, radianos;
+	const float pi = 3.141592;
+	printf("Digite o valor do angulo(em raios): ");
+	scanf("%f", &angulo);
+	radianos = angulo * (pi/180);
+	printf("Radianos: %.4f", radianos);
+	menu();
+}
+
+void listQuestao10() {
+	float dinheiroTotal = 780000.00,dinheiro, vencedor1, vencedor2, vencedor3;
+	
+	dinheiro = dinheiroTotal;
+	
+	vencedor1 = dinheiroTotal * 0.46;
+	dinheiro -= vencedor1;
+	
+	vencedor2 = dinheiroTotal * 0.32;
+	dinheiro -= vencedor2;
+	
+	vencedor3 = dinheiro;
+	
+	printf("Vencedor 1: %.2f\nVencedor 2: %.2f\nVencedor 3: %.2f", vencedor1, vencedor2, vencedor3);
+	
+	menu();
+}
+
 void listQuestao11() {
 	const float pi = 3.141592;
 	float area, raio;
@@ -132,6 +172,32 @@ void listQuestao11() {
 	area = pi * pow(raio, 2);
 	printf("O valor da area e: %.2f", area);
 	menu();
+}
+
+void listQuestao12() {
+	float alturaCilindro, raioCilindro, volumeCilindro;
+	const float pi = 3.141592;
+	printf("Digite a altura do cilindro: ");
+	scanf("%f", &alturaCilindro);
+	printf("Digite o raio do cilindro: ");
+	scanf("%f", &raioCilindro);
+	
+	volumeCilindro = pi * pow(raioCilindro, 2) * alturaCilindro;
+	
+	printf("Volume do cilindro: %.2f", volumeCilindro);
+}
+
+void listQuestao13() {
+	float catetoA,catetoB,hipotenusa, raiz;
+	printf("Digite o valor do cateto A: ");
+	scanf("%f", &catetoA);
+	
+	printf("Digite o valor do cateto B: ");
+	scanf("%f", &catetoB);
+
+	hipotenusa = sqrt(pow(catetoA, 2) + pow(catetoB, 2));
+	
+	printf("Hipotenusa: %.2f", hipotenusa);
 }
 
 int main() {
