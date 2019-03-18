@@ -1,8 +1,68 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+
+void aula() {
+	float numero1, numero2;
+	char operacao;
+	
+	printf("asdas:");
+	scanf("%f %c %f", &numero1, &operacao, &numero2);
+	
+	
+	switch(operacao) {
+		case '+':
+			printf("%.2f", numero1 + numero2);
+		break;
+		
+		case '-':
+			printf("%.2f", numero1 - numero2);
+		break;
+		
+		case '*':
+			printf("%.2f", numero1 * numero2);
+		break;
+		
+		case '/': 
+		
+		if(numero2 != 0) {
+			printf("%.2f", numero1 / numero2);
+		}
+		else {
+			printf("numero igual a zero!");
+		} 
+		break;
+	}
+	
+}
 
 void teste() {
+	unsigned int valor1, valor2, valor3, menu;
 	
+	printf("(1 = Geometrica : 2 = Ponderada : 3 = Aritimetica) \n Escola o tipo de media: ");
+	scanf("%d", &menu);
+	printf("Digite o valor 1: ");
+	scanf("%d", &valor1);
+	printf("Digite o valor 2: ");
+	scanf("%d", &valor2);
+	printf("Digite o valor 3: ");
+	scanf("%d", &valor3);
+	
+	switch (menu) {
+		case 1: printf("Media geometrica: %d", valor1 * valor2 * valor3);
+		break;
+
+		case 2: printf("Media ponderada: %d", (valor1 + 2 * valor2 + 3 * valor3) / 6);
+		break;
+		
+		case 3: printf("Media aritimetica: %d", (valor1 + valor2 + valor3) / 3);
+		break;
+	}
+	
+	
+	if( valor1 < 0 || valor2 < 0 || valor3 <0) {
+		printf("Inteiros prositivos plz!");
+	}
 	
 }
 
@@ -87,7 +147,68 @@ void questao3() {
 	}*/
 	
 }
+void questao4() {
+	
+}
+void questao5() {
+	float alturaPessoa, pesoIdealPessoa;
+	char sexoPessoa;
+	
+	printf("Digite o sexo (F:M): ");
+	scanf("%c", &sexoPessoa);
+	printf("Digite a altura: ");
+	scanf("%f", &alturaPessoa);
+	
+	if( sexoPessoa == 'M' || sexoPessoa == 'm') {
+		pesoIdealPessoa = (72.7 * alturaPessoa) - 58;
+	} else if ( sexoPessoa == 'F' || sexoPessoa == 'f') {
+		pesoIdealPessoa = (62.1 * alturaPessoa) - 44.7;
+	}
+	
+	printf("O peso ideal da pessoa é: %.3f", pesoIdealPessoa);
+}
+void questao6() {
+	float alturaPessoa, pesoPessoa, imcPessoa;
+	
+	printf("Digite a altura: ");
+	scanf("%f", &alturaPessoa);
+	printf("Digite o peso: ");
+	scanf("%f", &pesoPessoa);
+	
+	imcPessoa = pesoPessoa / pow(alturaPessoa, 2);
+	
+	if (imcPessoa < 18.5) {
+		printf("Abaixo do peso");
+	} else if (imcPessoa <= 25) {
+		printf("Peso normal");
+	} else if (imcPessoa <= 30) {
+		printf("Acima do peso");
+	} else {
+		printf("Obeso");
+	}
+}
+void questao7() {
+	int ladoTriangulo1, ladoTriangulo2, ladoTriangulo3;
+	printf("Digite o valor do lado 1 do triangulo: ");
+	scanf("%d", &ladoTriangulo1);
+	printf("Digite o valor do lado 2 do triangulo: ");
+	scanf("%d", &ladoTriangulo2);
+	printf("Digite o valor do lado 3 do triangulo: ");
+	scanf("%d", &ladoTriangulo3);
 
+	if (fabs(ladoTriangulo2 - ladoTriangulo3) < ladoTriangulo1 && ladoTriangulo1 < ladoTriangulo2 + ladoTriangulo3) {
+		if( ladoTriangulo1 == ladoTriangulo2 && ladoTriangulo2 == ladoTriangulo3 && ladoTriangulo1 == ladoTriangulo3) {
+			printf("Equilatero");
+		} else if( ladoTriangulo1 != ladoTriangulo2 && ladoTriangulo2 != ladoTriangulo3 && ladoTriangulo1 != ladoTriangulo3) {
+			printf("Escaleno");
+		} else {
+			printf("Isoceles");
+		}
+	} else {
+		printf("Nao eh um triangulo!");
+	}
+	
+}
 void questao8() {
 	float salarioInicial;
 	printf("Digite seu salario: ");
@@ -133,7 +254,29 @@ void questao8() {
 	printf("Novo salario: R$%.2f", salarioInicial);
 	*/
 }
-
+void questao9() {
+	float valorCordenadaX, valorCordenadaY;
+	
+	printf("Digite o valor da cordenada x: ");
+	scanf("%f", &valorCordenadaX);
+	printf("Digite o valor da cordenada y: ");
+	scanf("%f", &valorCordenadaY);
+	
+	if (valorCordenadaX == 0 && valorCordenadaY == 0){
+		printf("Esta na origem");
+	} else if (valorCordenadaX == 0 || valorCordenadaY == 0) {
+		printf("Estah sobre um dos eixos cartesianos");
+	} else if (valorCordenadaX > 0 && valorCordenadaY > 0) {
+		printf("Quadrante 1");
+	}  else if (valorCordenadaX < 0 && valorCordenadaY > 0) {
+		printf("Quadrante 2");
+	} else if (valorCordenadaX < 0 && valorCordenadaY < 0) {
+		printf("Quadrante 3");
+	} else if (valorCordenadaX > 0 && valorCordenadaY < 0) {
+		printf("Quadrante 4");
+	}
+	
+}
 void questao10() {
 	float nota1, nota2, nota3, mediaNotas;
 	
@@ -164,11 +307,6 @@ void questao10() {
 
 
 int main() {
-	//questao1();
-	//questao2();
-	//questao3();
-	//questao10();
-	questao8();
-	//teste();
+	aula();
 	return 0;
 }
