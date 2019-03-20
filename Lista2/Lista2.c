@@ -307,6 +307,6 @@ void questao10() {
 
 
 int main() {
-	aula();
+	teste();
 	return 0;
 }
