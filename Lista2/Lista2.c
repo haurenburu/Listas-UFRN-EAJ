@@ -4,35 +4,41 @@
 
 void aula() {
 	float numero1, numero2;
-	char operacao;
+	char operacao, menu = 1;
 	
-	printf("asdas:");
-	scanf("%f %c %f", &numero1, &operacao, &numero2);
-	
-	
-	switch(operacao) {
-		case '+':
-			printf("%.2f", numero1 + numero2);
-		break;
+	do {
+			
+		printf("Entrada: ");
+		scanf("%f %c %f", &numero1, &operacao, &numero2);
 		
-		case '-':
-			printf("%.2f", numero1 - numero2);
-		break;
 		
-		case '*':
-			printf("%.2f", numero1 * numero2);
-		break;
-		
-		case '/': 
-		
-		if(numero2 != 0) {
-			printf("%.2f", numero1 / numero2);
+		switch(operacao) {
+			case '+':
+				printf("Saida: %.2f", numero1 + numero2);
+			break;
+			
+			case '-':
+				printf("Saida: %.2f", numero1 - numero2);
+			break;
+			
+			case '*':
+				printf("Saida: %.2f", numero1 * numero2);
+			break;
+			
+			case '/': 
+			
+			if(numero2 != 0) {
+				printf("Saida: %.2f", numero1 / numero2);
+			}
+			else {
+				printf("numero igual a zero!");
+			} 
+			break;
 		}
-		else {
-			printf("numero igual a zero!");
-		} 
-		break;
-	}
+		printf("\nContinuar(1) | Sair(0): ");
+		scanf("%d", &menu);
+	} while (menu == 1);
+	
 	
 }
 
@@ -307,6 +313,6 @@ void questao10() {
 
 
 int main() {
-	teste();
+	aula();
 	return 0;
 }
